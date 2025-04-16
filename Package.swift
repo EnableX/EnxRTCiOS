@@ -8,7 +8,8 @@ let package = Package(
         .iOS(.v13)
     ],
     products: [
-        .library(name: "EnxRTCiOS", targets: ["EnxRTCiOS"])
+        .library(name: "EnxRTCiOS", targets: ["EnxRTCiOS"]),
+        .library(name: "EnablexWebRTC", targets: ["EnablexWebRTC"])
     ],
     targets: [
         .binaryTarget(

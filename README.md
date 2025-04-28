@@ -27,8 +27,10 @@ Create the objects for required sdk classes
 
 ```swift
     var enxRoom : EnxRoom!
-        This is the object of room class, all room based Apis need to call through this object, once you are connected to the room , you will receive `didConnect` call back with the reference of EnxRoom, assign it to the `enxRoom` object.
-    
 ```
+    This is the object of room class, all room based Apis need to call through this object, once you are connected to the room , you will receive **didConnect** call back with the reference of EnxRoom, assign it to the **enxRoom** object.
     
+
+   
+
    

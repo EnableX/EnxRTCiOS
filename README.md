@@ -23,11 +23,10 @@ Go to your class, where you wanted to implement the Video/Audio/Chat feature, im
 ```swift
 import EnxRTCiOS
 ```
-Create the object of sdk classes
+Create the objects for required sdk classes
 
 ```swift
     var enxRoom : EnxRoom! 
-    `This is the object of room class, all room based Apis need to call through this object, once you are connected with room , you will receive `**didConnect**` call back with the refrence of EnxRoom, just assign it will enxRoom object.`
-    var objectJoin : EnxRtc! 
-    var localStream : EnxStream!
 ```
+    `This is the object of room class, all room based Apis need to call through this object, once you are connected with room , you will receive `**didConnect**` call back with the refrence of EnxRoom, just assign it will enxRoom object.`
+   

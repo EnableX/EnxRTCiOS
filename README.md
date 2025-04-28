@@ -57,20 +57,20 @@ You need to call join method as code given below -
 
 - `token` is must be a valid EnableX session token as string.
 - `delegate` is instance of class where you receive events notifications.
-- `publishStreamInfo` contrains Local EnxStream information as `[[String : Any]]`(https://developer.enablex.io/docs/references/sdks/video-sdk/ios-sdk/stream-configuration/content/local-stream/).
-- `roomInfo` contains EnxRoom Basice information as `[[String : Any]](https://developer.enablex.io/docs/references/sdks/video-sdk/ios-sdk/room-connection/index/)`.
-- `advanceOptions` this is an optional parameter, provide as `[[Any]](https://developer.enablex.io/docs/references/sdks/video-sdk/ios-sdk/room-connection/index/)`.
+- `publishStreamInfo` contrains Local EnxStream information as [[String : Any]]`(https://developer.enablex.io/docs/references/sdks/video-sdk/ios-sdk/stream-configuration/content/local-stream/).
+- `roomInfo` contains EnxRoom Basice information as [[String : Any]](https://developer.enablex.io/docs/references/sdks/video-sdk/ios-sdk/room-connection/index/).
+- `advanceOptions` this is an optional parameter, provide as [[Any]](https://developer.enablex.io/docs/references/sdks/video-sdk/ios-sdk/room-connection/index/).
 
 *Callbacks* 
 
 - On getting connected with EnableX Room, following callbacks are received:
 
-        func room(_ room: EnxRoom?, didConnect roomMetadata: [String : Any]?)
+        `func room(_ room: EnxRoom?, didConnect roomMetadata: [String : Any]?)
         func room(_ room: EnxRoom?, didAddedStream stream: EnxStream?)
 
         // One of the following based on connection request
         func room(_ room: EnxRoom?, didActiveTalkerList Data: [EnxStream]?)  
-        func room(_ room: EnxRoom?, didActiveTalkerView view: UIView?) 
+        func room(_ room: EnxRoom?, didActiveTalkerView view: UIView?)`
 
 - On failing to connect with Enablex Room, following callback are received:
 

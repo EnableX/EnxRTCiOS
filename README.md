@@ -48,8 +48,8 @@ This is the object of EnxPlayerView class. This is used to play local or remote 
 You need to call join method as code given below - 
 
 ```swift
-        enxRTC = EnxRtc()
-        guard let steam = enxRTC.joinRoom(token, delegate: self, publishStreamInfo: localStreamInfo, roomInfo: roomInfo , advanceOptions: nil) else{return}
+    enxRTC = EnxRtc()
+    guard let steam = enxRTC.joinRoom(token, delegate: self, publishStreamInfo: localStreamInfo, roomInfo: roomInfo , advanceOptions: nil) else{return}
                 self.localStream = steam
                 self.localStream.delegate = self as EnxStreamDelegate
 ```
@@ -68,7 +68,6 @@ You need to call join method as code given below -
         func room(_ room: EnxRoom?, didConnect roomMetadata: [String : Any]?)
         func room(_ room: EnxRoom?, didAddedStream stream: EnxStream?)
         func room(_ room: EnxRoom?, didActiveTalkerList Data: [EnxStream]?) or func room(_ room: EnxRoom?, didActiveTalkerView view: UIView?)
-        // One of the following based on connection request
 
 - On failing to connect with Enablex Room, following callback are received:
 

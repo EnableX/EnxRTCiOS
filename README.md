@@ -57,7 +57,7 @@ You need to call join method as code given below -
 
 - `token` is must be a valid EnableX session token as string.
 - `delegate` is instance of class where you receive events notifications.
-- `publishStreamInfo` contrains Local EnxStream information as `[[String : Any]](https://developer.enablex.io/docs/references/sdks/video-sdk/ios-sdk/stream-configuration/content/local-stream/)`.
+- `publishStreamInfo` contrains Local EnxStream information as `[[String : Any]]`(https://developer.enablex.io/docs/references/sdks/video-sdk/ios-sdk/stream-configuration/content/local-stream/).
 - `roomInfo` contains EnxRoom Basice information as `[[String : Any]](https://developer.enablex.io/docs/references/sdks/video-sdk/ios-sdk/room-connection/index/)`.
 - `advanceOptions` this is an optional parameter, provide as `[[Any]](https://developer.enablex.io/docs/references/sdks/video-sdk/ios-sdk/room-connection/index/)`.
 

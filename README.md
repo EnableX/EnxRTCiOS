@@ -16,3 +16,18 @@ add the following line to the dependencies in your `Package.swift` file:
 ```swift
 .package(url: "https://github.com/EnableX/EnxRTCiOS.git", from: "1.0.0"),
 ```
+
+## How to use
+
+Go to your class, where you wanted to implement the Video/Audio/Chat feature, import the libraray
+```swift
+import EnxRTCiOS
+```
+Create the object of sdk classes
+
+```swift
+### Properties
+    var enxRoom : EnxRoom! `This is for room class, all room based Apis need to call through this object, once you are connected with room , you will receive **didConnect** call back with the refrence of EnxRoom, just assign it will enxRoom object.`
+    var objectJoin : EnxRtc! 
+    var localStream : EnxStream!
+```

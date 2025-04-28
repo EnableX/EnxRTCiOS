@@ -53,10 +53,10 @@ This is the object of EnxPlayerView class, this will used to local or remote vid
                 self.localStream.delegate = self as EnxStreamDelegate
 ```
 Here 
-    **token** is must va valid EnxbaleS session token as string
-    **delegate** instance of class where you receive the events notifications
-    **publishStreamInfo** Local EnxStream details as [String : Any](https://developer.enablex.io/docs/references/sdks/video-sdk/ios-sdk/stream-configuration/content/local-stream/)
-    **roomInfo** EnxRoom Basice information as [String : Any](https://developer.enablex.io/docs/references/sdks/video-sdk/ios-sdk/room-connection/index/)
+    **token** is must va valid EnableX session token as string, 
+    **delegate** instance of class where you receive the events notifications,
+    **publishStreamInfo** Local EnxStream details as [[String : Any]](https://developer.enablex.io/docs/references/sdks/video-sdk/ios-sdk/stream-configuration/content/local-stream/),
+    **roomInfo** EnxRoom Basice information as [String : Any](https://developer.enablex.io/docs/references/sdks/video-sdk/ios-sdk/room-connection/index/),
     **advanceOptions** this is an optional as [Any](https://developer.enablex.io/docs/references/sdks/video-sdk/ios-sdk/room-connection/index/)
 
 **Once connected with EnableX Room** developer will receive callbacks as
@@ -76,10 +76,10 @@ Here
 ```swift
         func didRoomDisconnect(_ response: [Any]?)
 ```
-**Once any other user conenct and disconnect** with same Enablex room, developer will receive as notification as 
+**Once any other user conenct and disconnect** with same Enablex room, developer will receive as callbacks as 
 
 ```swift
     func room(_ room: EnxRoom?, userDidJoined Data: [Any]?)
     func room(_ room: EnxRoom?, userDidDisconnected Data: [Any]?)
 ```
-**Note**:- These are the required callback developer must need to implement, other callback are option based on service needs, Developer need to implement.
+**Note**:- These are the required callbacks, developer must need to implement this, others callback are option based on service needs to implement.

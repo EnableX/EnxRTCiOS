@@ -53,11 +53,11 @@ This is the object of EnxPlayerView class, this will used to local or remote vid
                 self.localStream.delegate = self as EnxStreamDelegate
 ```
 Here 
-    **token** is must va valid EnableX session token as string, 
+    **token** is must be a valid EnableX session token as string, 
     **delegate** instance of class where you receive the events notifications,
     **publishStreamInfo** Local EnxStream details as [[String : Any]](https://developer.enablex.io/docs/references/sdks/video-sdk/ios-sdk/stream-configuration/content/local-stream/),
-    **roomInfo** EnxRoom Basice information as [String : Any](https://developer.enablex.io/docs/references/sdks/video-sdk/ios-sdk/room-connection/index/),
-    **advanceOptions** this is an optional as [Any](https://developer.enablex.io/docs/references/sdks/video-sdk/ios-sdk/room-connection/index/)
+    **roomInfo** EnxRoom Basice information as [[String : Any]](https://developer.enablex.io/docs/references/sdks/video-sdk/ios-sdk/room-connection/index/),
+    **advanceOptions** this is an optional as [[Any]](https://developer.enablex.io/docs/references/sdks/video-sdk/ios-sdk/room-connection/index/)
 
 **Once connected with EnableX Room** developer will receive callbacks as
 

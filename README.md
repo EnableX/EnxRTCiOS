@@ -27,7 +27,7 @@ Create the object of sdk classes
 
 ```swift
     var enxRoom : EnxRoom! 
-    `This is for room class, all room based Apis need to call through this object, once you are connected with room , you will receive **didConnect** call back with the refrence of EnxRoom, just assign it will enxRoom object.`
+    `This is the object of room class, all room based Apis need to call through this object, once you are connected with room , you will receive `**didConnect**` call back with the refrence of EnxRoom, just assign it will enxRoom object.`
     var objectJoin : EnxRtc! 
     var localStream : EnxStream!
 ```

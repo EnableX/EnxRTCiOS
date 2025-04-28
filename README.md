@@ -6,7 +6,7 @@
 
 For API documentation, see the library's official documentation in Xcode or on the Web.
 
-[View the Documentation Here](https://developer.enablex.io/docs/references/sdks/video-sdk/ios-sdk/index/)
+[APIs Documentation](https://developer.enablex.io/docs/references/sdks/video-sdk/ios-sdk/index/)
 
 ## Adding EnxRTCiOS as a Dependency
 

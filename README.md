@@ -44,4 +44,42 @@ This is the object of EnxStream class, all stream based Apis must be called thro
 ```
 This is the object of EnxPlayerView class, this will used to local or remote video streaming.
 
-   
+**How to join the EnableX Room **   you need to call join Aps as below code
+
+```swift
+        enxRTC = EnxRtc()
+        guard let steam = enxRTC.joinRoom(token, delegate: self, publishStreamInfo: localStreamInfo, roomInfo: roomInfo , advanceOptions: nil) else{return}
+                self.localStream = steam
+                self.localStream.delegate = self as EnxStreamDelegate
+```
+Here 
+    **token** is must va valid EnxbaleS session token as string
+    **delegate** instance of class where you receive the events notifications
+    **publishStreamInfo** Local EnxStream details as [String : Any](https://developer.enablex.io/docs/references/sdks/video-sdk/ios-sdk/stream-configuration/content/local-stream/)
+    **roomInfo** EnxRoom Basice information as [String : Any](https://developer.enablex.io/docs/references/sdks/video-sdk/ios-sdk/room-connection/index/)
+    **advanceOptions** this is an optional as [Any](https://developer.enablex.io/docs/references/sdks/video-sdk/ios-sdk/room-connection/index/)
+
+**Once connected with EnableX Room** developer will receive callbacks as
+
+```swift
+        func room(_ room: EnxRoom?, didConnect roomMetadata: [String : Any]?)
+        func room(_ room: EnxRoom?, didAddedStream stream: EnxStream?)
+        func room(_ room: EnxRoom?, didActiveTalkerList Data: [EnxStream]?) or func room(_ room: EnxRoom?, didActiveTalkerView view: UIView?) Based on request during connect
+```
+
+** Once failed to connect with Enablex Room** developer will receive callback as
+
+```swift
+    func room(_ room: EnxRoom?, didError reason: [Any]?)
+```
+**Once disconnect with EnableX Room** developer will receive callbacks as
+```swift
+        func didRoomDisconnect(_ response: [Any]?)
+```
+**Once any other user conenct and disconnect** with same Enablex room, developer will receive as notification as 
+
+```swift
+    func room(_ room: EnxRoom?, userDidJoined Data: [Any]?)
+    func room(_ room: EnxRoom?, userDidDisconnected Data: [Any]?)
+```
+**Note**:- These are the required callback developer must need to implement, other callback are option based on service needs, Developer need to implement.

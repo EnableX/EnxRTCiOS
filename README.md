@@ -44,7 +44,7 @@ This is the object of EnxStream class, all stream based Apis must be called thro
 ```
 This is the object of EnxPlayerView class, this will used to local or remote video streaming.
 
-**How to join the EnableX Room **   you need to call join Aps as below code
+**How to join the EnableX Room**   you need to call join Aps as below code
 
 ```swift
         enxRTC = EnxRtc()

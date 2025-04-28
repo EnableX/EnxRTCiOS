@@ -21,30 +21,31 @@ add the following line to the dependencies in your `Package.swift` file:
 
 Go to your class, where you wanted to implement the Video/Audio/Chat feature, import the libraray
 ```swift
-import EnxRTCiOS
+    import EnxRTCiOS
 ```
-Create the objects for required sdk classes
+Create the objects for required SDK classes
 
 ```swift
     var enxRoom : EnxRoom!
 ```
-This is the object of Enxroom class, all room based Apis need to call through this object, once you are connected to the room , you will receive **didConnect** call back with the reference of EnxRoom, assign it to the **enxRoom** object.
+This is the object of EnxRoom class, all room based functions/mothods need to call through this object. Once you are connected to the room , you will receive **didConnect** callBack with the reference of EnxRoom to be assign to the **enxRoom** object.
 ```swift
     var enxRTC : EnxRtc!
 ```
-This is the object of EnxRTC class, EnxRTC will give you are single Apis to connect with room. Its will also do all internal formalities required for connection , like creating EnxRoom,EnxStream etc..
+This is the object of EnxRTC class. EnxRTC will give you single method to connect with room. It will also do all internal formalities required for connection like creating EnxRoom, EnxStream etc.
 
 ```swift
     var enxStream : EnxStream!
 ```
-This is the object of EnxStream class, all stream based Apis must be called through this object.
+This is the object of EnxStream class, all stream based functions/methods must be called through this object.
 
 ```swift
     var enxPlayerView : EnxPlayerView!
 ```
-This is the object of EnxPlayerView class, this will used to local or remote video streaming.
+This is the object of EnxPlayerView class. This is used to play local or remote video streaming.
 
-**How to join the EnableX Room**   you need to call join Aps as below code
+**How to join the EnableX Room?**   
+You need to call join method as code given below - 
 
 ```swift
         enxRTC = EnxRtc()
@@ -52,34 +53,35 @@ This is the object of EnxPlayerView class, this will used to local or remote vid
                 self.localStream = steam
                 self.localStream.delegate = self as EnxStreamDelegate
 ```
-Here 
-    **token** is must be a valid EnableX session token as string, 
-    **delegate** instance of class where you receive the events notifications,
-    **publishStreamInfo** Local EnxStream details as [[String : Any]](https://developer.enablex.io/docs/references/sdks/video-sdk/ios-sdk/stream-configuration/content/local-stream/),
-    **roomInfo** EnxRoom Basice information as [[String : Any]](https://developer.enablex.io/docs/references/sdks/video-sdk/ios-sdk/room-connection/index/),
-    **advanceOptions** this is an optional as [[Any]](https://developer.enablex.io/docs/references/sdks/video-sdk/ios-sdk/room-connection/index/)
+*Function Parameters*
 
-**Once connected with EnableX Room** developer will receive callbacks as
+- `token` is must be a valid EnableX session token as string.
+- `delegate` is instance of class where you receive events notifications.
+- `publishStreamInfo` contrains Local EnxStream information as `[[String : Any]](https://developer.enablex.io/docs/references/sdks/video-sdk/ios-sdk/stream-configuration/content/local-stream/)`.
+- `roomInfo` contains EnxRoom Basice information as `[[String : Any]](https://developer.enablex.io/docs/references/sdks/video-sdk/ios-sdk/room-connection/index/)`.
+- `advanceOptions` this is an optional parameter, provide as `[[Any]](https://developer.enablex.io/docs/references/sdks/video-sdk/ios-sdk/room-connection/index/)`.
 
-```swift
+*Callbacks* 
+
+- On getting connected with EnableX Room, following callbacks are received:
+
         func room(_ room: EnxRoom?, didConnect roomMetadata: [String : Any]?)
         func room(_ room: EnxRoom?, didAddedStream stream: EnxStream?)
-        func room(_ room: EnxRoom?, didActiveTalkerList Data: [EnxStream]?) or func room(_ room: EnxRoom?, didActiveTalkerView view: UIView?) Based on request during connect
-```
 
-** Once failed to connect with Enablex Room** developer will receive callback as
+        // One of the following based on connection request
+        func room(_ room: EnxRoom?, didActiveTalkerList Data: [EnxStream]?)  
+        func room(_ room: EnxRoom?, didActiveTalkerView view: UIView?) 
 
-```swift
-    func room(_ room: EnxRoom?, didError reason: [Any]?)
-```
-**Once disconnect with EnableX Room** developer will receive callbacks as
-```swift
+- On failing to connect with Enablex Room, following callback are received:
+
+        func room(_ room: EnxRoom?, didError reason: [Any]?)
+
+- On being disconnected from EnableX Room, following callbacks are received:
+
         func didRoomDisconnect(_ response: [Any]?)
-```
-**Once any other user conenct and disconnect** with same Enablex room, developer will receive as callbacks as 
 
-```swift
-    func room(_ room: EnxRoom?, userDidJoined Data: [Any]?)
-    func room(_ room: EnxRoom?, userDidDisconnected Data: [Any]?)
-```
-**Note**:- These are the required callbacks, developer must need to implement this, others callback are option based on service needs to implement.
+- On joining or exiting EnabeX Room by others users, following callbacks are received:
+
+        func room(_ room: EnxRoom?, userDidJoined Data: [Any]?)
+    
+**Note:** Developers must implement the above mentioned Callbacks as they are mandatory to handle. All other Callbacks, given in Developer Documentation; are optional and may be implemented if needed.

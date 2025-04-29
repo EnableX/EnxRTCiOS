@@ -14,7 +14,7 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "EnxRTCiOS",
-            url: "https://www.enablex.io/downloads/EnxRTCiOS.xcframework.zip",
+            url: "https://developer.enablex.io/downloads/iOS_SDK_3.0.19/EnxRTCiOS.xcframework_3.0.19.zip",
             checksum: "cbc9ef5eb8ebd26de8e95fb36125a703fde4786146ae189c0d4dbd0a934278f1"
         ),
         .binaryTarget(

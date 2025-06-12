@@ -14,7 +14,7 @@ To use the `EnxRTCiOS` library in a SwiftPM project,
 add the following line to the dependencies in your `Package.swift` file:
 
 ```swift
-.package(url: "https://github.com/EnableX/EnxRTCiOS.git", from: "3.0.20"),
+.package(url: "https://github.com/EnableX/EnxRTCiOS.git", from: "3.0.21"),
 ```
 
 ## How to use

@@ -19,8 +19,8 @@ let package = Package(
         ),
         .binaryTarget(
             name: "EnablexWebRTC",
-            url: "https://developer.enablex.io/downloads/EnablexWebRTC.xcframework_1.0.4.zip",
-            checksum: "6ef4e8c6f78eddbc9d4f478ea14fb111cf58199a976b15aff37779ae0fe04b6c"
+            url: "https://developer.enablex.io/downloads/EnablexWebRTC.xcframework_1.0.5.zip",
+            checksum: "b83804784da20b95d8eec0d48614f9071cdacfe2e7cda229a236890bc8dbfac8"
         )
     ]
 )

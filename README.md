@@ -1,3 +1,75 @@
+# EnxRTCiOS Swift Package
+
+This Swift Package provides iOS SDK for EnableX Real-Time Communication platform.
+
+## Important Notes
+
+⚠️ **This is an iOS-only package** - The binary frameworks (`EnxRTCiOS` and `EnablexWebRTC`) only support iOS. You cannot build this package standalone on macOS using `swift build`.
+
+## Installation
+
+### Using Xcode
+1. Open your iOS project in Xcode
+2. Go to File → Add Package Dependencies
+3. Enter the package URL: `https://github.com/EnableX/EnxRTCiOS.git`
+4. Select the version and add to your target
+
+### Using Package.swift
+Add this to your iOS app's `Package.swift`:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/EnableX/EnxRTCiOS.git", from: "1.0.0")
+]
+```
+
+## Usage
+
+Once added to your iOS project, simply import:
+
+```swift
+import EnxRTCiOS
+```
+
+This automatically provides access to both:
+- `EnxRTCiOS` framework
+- `EnablexWebRTC` framework
+
+## Testing
+
+To test this package:
+
+1. **DO NOT** run `swift build` from command line - it will fail because this is iOS-only
+2. **DO** create an iOS test app and add this package as a dependency
+3. Build and run your iOS app on device or simulator
+
+## Package Structure
+
+- `EnxRTCiOS` - Main binary framework (iOS SDK)
+- `EnablexWebRTC` - WebRTC framework dependency  
+- `EnxRTCiOSWrapper` - Swift wrapper that re-exports both frameworks
+
+## Platform Support
+
+- iOS 13.0+
+- iPhone/iPad devices and simulators
+- Does NOT support macOS, watchOS, or tvOS
+
+## Troubleshooting
+
+### "No such module" errors when building
+This means you're trying to build on an unsupported platform. Ensure you're:
+- Building an iOS app target (not macOS)
+- Using Xcode with iOS SDK
+- Targeting iOS 13.0 or later
+
+### Package builds in Xcode but fails with swift build
+This is expected behavior. Use Xcode for iOS development with this package.
+
+## License
+
+See the LICENSE file for details.
+
 # EnxRTCiOS
 
 **EnxRTCiOS** is an iOS toolkit used for building native iOS applications to integrate real-time communication using the EnableX Platform. This toolkit exposes functions, methods, and notifications required to communicate with EnableX signaling and media servers using a valid token to carry out an RTC session.
@@ -14,7 +86,7 @@ To use the `EnxRTCiOS` library in a SwiftPM project,
 add the following line to the dependencies in your `Package.swift` file:
 
 ```swift
-.package(url: "https://github.com/EnableX/EnxRTCiOS.git", from: "3.0.21"),
+.package(url: "https://github.com/EnableX/EnxRTCiOS.git", from: "3.0.20"),
 ```
 
 ## How to use

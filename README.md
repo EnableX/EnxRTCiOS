@@ -1,21 +1,69 @@
 # EnxRTCiOS
 
-**EnxRTCiOS** is an iOS toolkit used for building native iOS applications to integrate real-time communication using the EnableX Platform. This toolkit exposes functions, methods, and notifications required to communicate with EnableX signaling and media servers using a valid token to carry out an RTC session.
+A Swift Package Manager distribution for EnxRTCiOS framework that automatically includes EnablexWebRTC for iOS video calling and real-time communication.
 
-## Documentation
+## 📋 Requirements
 
-For API documentation, see the library's official documentation in Xcode or on the Web.
+- iOS 13.0+
+- Xcode 12.0+
+- Device-only builds (no simulator support)
 
-[APIs Documentation](https://developer.enablex.io/docs/references/sdks/video-sdk/ios-sdk/index/)
+## 📦 What's Included
 
-## Adding EnxRTCiOS as a Dependency
+When you add this package, you automatically get:
+- ✅ **EnxRTCiOS** - Main iOS SDK framework
+- ✅ **EnablexWebRTC** - WebRTC framework (auto-included)
 
-To use the `EnxRTCiOS` library in a SwiftPM project, 
-add the following line to the dependencies in your `Package.swift` file:
+## 🚀 Installation
+
+### Swift Package Manager
+
+Add this package to your iOS project:
 
 ```swift
-.package(url: "https://github.com/EnableX/EnxRTCiOS.git", from: "3.1.0"),
+dependencies: [
+    .package(url: "https://github.com/EnableX/EnxRTCiOS.git", from: "3.1.1")
+]
 ```
+
+Or in Xcode:
+1. Go to **File → Add Package Dependencies...**
+2. Enter the repository URL: `https://your-repo-url.git`
+3. Select the version and add to your target
+
+## 💡 Usage
+
+### Import the Framework
+
+```swift
+import EnxRTCiOS
+// EnablexWebRTC is automatically available through EnxRTCiOS
+```
+
+### Basic Usage
+
+```swift
+// Initialize your video calling functionality
+// (Add your specific usage examples here)
+```
+
+## 🔧 Technical Details
+
+### Package Structure
+- **Package Name**: `EnxRTCiOS` (appears as dependency name)
+- **Product**: `EnxRTCiOS` (single library containing both frameworks)
+- **Auto-Dependencies**: `EnablexWebRTC` is automatically fetched from https://github.com/EnableX/EnablexWebRTC.git
+
+### Build Configuration
+- **Platforms**: iOS 13.0+
+- **Architectures**: arm64 (device-only)
+- **No Simulator Support**: Both frameworks are optimized for device builds only
+
+## 🛠 Development Notes
+
+- This package automatically resolves and includes EnablexWebRTC when added to projects
+- Users only need to add the EnxRTCiOS package - EnablexWebRTC is included automatically
+- Both frameworks are pre-compiled XCFrameworks for optimal performance
 
 ## How to use
 
@@ -82,3 +130,15 @@ You need to call join method as code given below -
         func room(_ room: EnxRoom?, userDidJoined Data: [Any]?)
     
 **Note:** Developers must implement the above mentioned Callbacks as they are mandatory to handle. All other Callbacks, given in Developer Documentation; are optional and may be implemented if needed.
+
+
+## 🔗 Related Links
+
+- [EnablexWebRTC Repository](https://github.com/EnableX/EnablexWebRTC.git)
+- [EnableX Platform Documentation](https://developer.enablex.io/docs/references/sdks/video-sdk/ios-sdk/index/)
+
+## 🆘 Support
+
+For issues or questions:
+1. Check the documentation
+2. Contact support team

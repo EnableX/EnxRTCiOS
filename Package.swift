@@ -1,4 +1,3 @@
-
 // swift-tools-version:5.7
 import PackageDescription
 
@@ -8,19 +7,23 @@ let package = Package(
         .iOS(.v13)
     ],
     products: [
-        .library(name: "EnxRTCiOS", targets: ["EnxRTCiOS"]),
-        .library(name: "EnablexWebRTC", targets: ["EnablexWebRTC"])
+        .library(name: "EnxRTCiOS", targets: ["EnxRTCiOS", "EnablexWebRTCWrapper"])
+    ],
+    dependencies: [
+        .package(url: "https://github.com/EnableX/EnablexWebRTC.git", from: "2.0.0")
     ],
     targets: [
         .binaryTarget(
             name: "EnxRTCiOS",
-            url: "https://developer.enablex.io/downloads/iOS_SDK_3.1.0/EnxRTCiOS.xcframework_3.1.0.zip",
-            checksum: "9d40b991426f7010944eb2ce601573d4c3645e3cf52bbf80bb13510675afd703"
+            url: "https://developer.enablex.io/downloads/iOS_SDK_3.1.1/EnxRTCiOS.xcframework_3.1.1.zip",
+            checksum: "d75a02c31b7d2b3df85650b34e473d5e99ed059e13b7c09162e0ebefd28ffab6"
         ),
-        .binaryTarget(
-            name: "EnablexWebRTC",
-            url: "https://developer.enablex.io/downloads/EnablexWebRTC.xcframework_2.0.0.zip",
-            checksum: "60fdf989c1fcf249a9f146cfa70654fef1b569319c5c6bd9d6d94e4edbf192a7"
+        .target(
+            name: "EnablexWebRTCWrapper",
+            dependencies: [
+                .product(name: "EnablexWebRTC", package: "EnablexWebRTC")
+            ],
+            path: "Sources/EnablexWebRTC"
         )
     ]
 )

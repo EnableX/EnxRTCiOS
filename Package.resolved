@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "enablexwebrtc",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/EnableX/EnablexWebRTC.git",
+      "state" : {
+        "revision" : "cf2162e19bcfb1dc0719ae356e35c339fcccb5ac",
+        "version" : "2.0.0"
+      }
+    }
+  ],
+  "version" : 2
+}

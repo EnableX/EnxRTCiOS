@@ -10,13 +10,13 @@ let package = Package(
         .library(name: "EnxRTCiOS", targets: ["EnxRTCiOS", "EnablexWebRTCWrapper"])
     ],
     dependencies: [
-        .package(url: "https://github.com/EnableX/EnablexWebRTC.git", from: "2.0.0")
+        .package(url: "https://github.com/EnableX/EnablexWebRTC.git", from: "2.0.1")
     ],
     targets: [
         .binaryTarget(
             name: "EnxRTCiOS",
-            url: "https://developer.enablex.io/downloads/iOS_SDK_3.1.1/EnxRTCiOS.xcframework_3.1.1.zip",
-            checksum: "d75a02c31b7d2b3df85650b34e473d5e99ed059e13b7c09162e0ebefd28ffab6"
+            url: "https://developer.enablex.io/downloads/iOS_SDK_3.1.2/EnxRTCiOS.xcframework_3.1.2.zip",
+            checksum: "522accdcd09fd54a42174a5e7fa5e5dce676d884d44097cfd176672c4a1487e7"
         ),
         .target(
             name: "EnablexWebRTCWrapper",

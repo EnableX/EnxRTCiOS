@@ -15,8 +15,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "EnxRTCiOS",
-            url: "https://developer.enablex.io/downloads/iOS_SDK_3.1.3/EnxRTCiOS.xcframework_3.1.3.zip",
-            checksum: "3eb8da549ec613ae8d7eecd3ffd56e792542ae0519ede755cd188d55799addd1"
+            url: "https://developer.enablex.io/downloads/iOS_SDK_3.1.4/EnxRTCiOS.xcframework_3.1.4.zip",
+            checksum: "09c827c1bf30210552f63ec16c4c205e874fd405baf53ac8bebf27dfa7ad37b7"
         ),
         .target(
             name: "EnablexWebRTCWrapper",

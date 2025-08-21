@@ -22,7 +22,7 @@ Add this package to your iOS project:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/EnableX/EnxRTCiOS.git", from: "3.1.3")
+    .package(url: "https://github.com/EnableX/EnxRTCiOS.git", from: "3.1.4")
 ]
 ```
 

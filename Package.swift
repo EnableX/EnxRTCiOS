@@ -33,20 +33,23 @@ let package = Package(
         // One product, two binary targets.
         // Xcode will link AND embed both xcframeworks when this product
         // is added to an app target.
-        .library(name: "EnxRTCiOS", targets: ["EnxRTCiOS", "EnablexWebRTC"])
+        .library(name: "EnxRTCiOS", targets: ["EnxRTCiOS", "EnablexWebRTCWrapper"])
+    ],
+    dependencies: [
+        .package(url: "https://github.com/EnableX/EnablexWebRTC.git", from: "2.0.2")
     ],
     targets: [
         .binaryTarget(
             name: "EnxRTCiOS",
-            url: "https://developer.enablex.io/downloads/video/ios/v3.1.6/EnxRTCiOS.xcframework_3.1.6.zip",
-            checksum: "a2bb5d47b680b8079852e44dfd33b28b7b9ec19cff8ed302d26a14718c357f66"
+            url: "https://developer.enablex.io/downloads/iOS_SDK_3.1.5/EnxRTCiOS.xcframework_3.1.5.zip",
+            checksum: "5dc5bf8fae68919a47e92930bccd99ca548f085badac7dcecd9e0a60dc627252"
         ),
-        // EnablexWebRTC — declared inline so Xcode reliably embeds it.
-        // Update url + checksum here whenever EnablexWebRTC releases a new version.
-        .binaryTarget(
-            name: "EnablexWebRTC",
-            url: "https://developer.enablex.io/downloads/webrtc/ios/EnablexWebRTC.xcframework_2.0.2.zip",
-            checksum: "adac7629eeb8d2a2776faf24e7d4195a0d9867a7ba29740c32462c656eef7c7c"
+        .target(
+            name: "EnablexWebRTCWrapper",
+            dependencies: [
+                .product(name: "EnablexWebRTC", package: "EnablexWebRTC")
+            ],
+            path: "Sources/EnablexWebRTC"
         )
     ]
 )
